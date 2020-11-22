@@ -1,0 +1,8 @@
+{
+  "extends": ["react-app", "shared-config"],
+  "rules": {
+    "additional-rule": "warn",
+    "react-hooks/exhaustive-deps": "off",
+    "jest/expect-expect": "off"
+  }
+}

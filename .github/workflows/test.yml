@@ -1,0 +1,19 @@
+name: e2e-action
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+       name: Install dependencies
+        uses: cypress-io/github-action@v2
+      - name: Cypress install
+        with:
+          runTests: false
+      - run: yarn start
+      - name: Run tests
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          browser: chrome
+          headless: true

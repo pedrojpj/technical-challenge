@@ -1,0 +1,12 @@
+{
+  "chromeWebSecurity": false,
+  "testFiles": ["**/*.spec.ts", "**/*.spec.tsx"],
+  "defaultCommandTimeout": 4000,
+  "videoCompression": false,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  },
+  "experimentalComponentTesting": true,
+  "componentFolder": "src"
+}
