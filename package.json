@@ -1,5 +1,6 @@
 {
   "name": "technical-challenge",
+  "homepage": "/technical-challenge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
