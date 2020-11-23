@@ -12,8 +12,10 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
-      - name: Build page
-        run: build
+      - name: build project
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
