@@ -3,16 +3,19 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-      - name: install dependencies
-      - uses: borales/actions-yarn@v2.0.0      
-          with:
-            cmd: install 
+      - uses: actions/checkout@v2
+      - name: Build the stack
+        run: |
+          docker build . -f Dockerfile.web -t tech-challenge 
+          docker run --publish 3000:3000 --detach --name tech-challenge tech-challenge:latest
       - name: Cypress install
-        uses: cypress-io/github-action@v2      
+        uses: cypress-io/github-action@v2
         with:
           runTests: false
-      - run: yarn start
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:

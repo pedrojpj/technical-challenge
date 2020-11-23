@@ -24,6 +24,12 @@ To be able to run the project in developer mode, execute the command:
 
     yarn start
 
+### Test
+
+To run the tests
+
+    yarn test
+
 ### Execution with Docker
 
 To build the image of Docker:

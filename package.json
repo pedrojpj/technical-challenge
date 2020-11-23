@@ -1,6 +1,5 @@
 {
   "name": "technical-challenge",
-  "homepage": "/technical-challenge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,8 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "e2e:open": "cypress open",
-    "e2e": "cypress run --headless",
+    "test:open": "cypress open",
+    "test": "cypress run --headless",
     "ci": "start-server-and-test start http://localhost:3000 e2e"
   },
   "browserslist": {
