@@ -14,12 +14,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
         env:
           NPM_CONFIG_PREFIX: "~/.npm-global"
-      - run: npm install -g yarn
+      - run: |
+          npm install -g yarn  
+          npm install -g serve
       - name: yarn install, build, start
         run: |
           yarn
           yarn build
-          yarn start
+          serve -s build -p 3000
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
