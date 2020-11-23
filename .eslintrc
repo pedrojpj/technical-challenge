@@ -1,7 +1,7 @@
 {
   "extends": ["react-app"],
   "rules": {
-    "additional-rule": "warn",
+    "additional-rule": "off",
     "react-hooks/exhaustive-deps": "off",
     "jest/expect-expect": "off"
   }
