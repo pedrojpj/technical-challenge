@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install dependencies
-      - uses: borales/actions-yarn@v2.0.0      
-          with:
-            cmd: install 
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
       - name: Cypress install
-        uses: cypress-io/github-action@v2      
+        uses: cypress-io/github-action@v2
         with:
           runTests: false
       - run: yarn start
