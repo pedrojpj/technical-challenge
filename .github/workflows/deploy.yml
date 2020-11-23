@@ -10,16 +10,16 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-    - name: install dependencies
-    - uses: borales/actions-yarn@v2.0.0
+      - name: install dependencies
+      - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: install 
-    - name: Build page
-      run: build
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: master
-        FOLDER: build # The folder the action should deploy.
-        CLEAN: true 
+          cmd: install
+      - name: Build page
+        run: build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master
+          FOLDER: build # The folder the action should deploy.
+          CLEAN: true
