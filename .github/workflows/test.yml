@@ -7,21 +7,11 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-        env:
-          NPM_CONFIG_PREFIX: "~/.npm-global"
-      - run: |
-          npm install -g yarn  
-          npm install -g serve
-      - name: yarn install, build, start
+      - uses: actions/checkout@v2
+      - name: Build the stack
         run: |
-          yarn
-          yarn build
-          serve -s build -p 3000
+          docker build . -f Dockerfile.web -t tech-challenge 
+          docker run --publish 3000:3000 --detach --name tech-challenge tech-challenge:latest
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
