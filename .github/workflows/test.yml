@@ -12,6 +12,10 @@ jobs:
         run: |
           docker build . -f Dockerfile.web -t tech-challenge 
           docker run --publish 3000:3000 --detach --name tech-challenge tech-challenge:latest
+      - name: Cypress install
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
